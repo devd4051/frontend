@@ -1,4 +1,4 @@
-package com.tavant.app.config;
+package com.app.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages={"com.tavant.project.controllers"})
+@ComponentScan(basePackages={"com.project.controllers"})
 public class WebProjectConfig extends WebMvcConfigurerAdapter{
 
 	@Override
