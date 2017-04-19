@@ -18,7 +18,7 @@
 		<dependency>
 		  <groupId>junit</groupId>
 		  <artifactId>junit</artifactId>
-		  <version>3.8.1</version>
+		  <version>4.12</version>
 		  <scope>test</scope>
 		</dependency>
 	
@@ -55,6 +55,14 @@
   </dependencies>
   <build>
     <finalName>frontend</finalName>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <testSourceDirectory>src/test</testSourceDirectory> 
+    <resources>
+        <resource>
+            <directory>src/resources</directory>
+        </resource>
+    </resources>
+
 	<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
