@@ -22,7 +22,7 @@ import org.w3c.dom.Element;
 
 public class GeneratePDF{
 
-	private static final String _DEST = "";
+	private static final String _DEST = "G://Resume.pdf";
 	
 	@Test
 	public void generatePDF(){
