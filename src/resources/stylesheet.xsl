@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format">
 	<xsl:output method="xml" indent="yes" />
-	
 	<xsl:template match="/">
 		<!-- TODO: Auto-generated template -->
 
@@ -22,25 +21,23 @@
 				<fo:static-content flow-name="xsl-region-before">
 					<fo:block font-size="30pt" font-family="serif" text-align="center"
 						font-weight="bold">
-						Devaraj Gurikar
+						<xsl:value-of select="resume/name" />
 					</fo:block>
-					<fo:block font-size="15pt" font-family="serif" 
-						font-weight="bold" text-align ="center">
-						
-						<fo:inline border-right="solid 1px black" padding="2px">
-          					+91-7204305688
+					<fo:block font-size="15pt" font-family="serif" font-weight="bold" text-align ="center">
+						 
+						<fo:inline border-right="solid 1px black"  padding="2px">
+          					+91-<xsl:value-of select="resume/contact"/>
         				</fo:inline>
         				
         				<fo:inline border-right="solid 1px black" padding="2px">
         					LinkedIn: 
-							<fo:basic-link  external-destination="url('https://www.linkedin.com/in/devaraj-gurikar-1634a750/')" 
-    							 text-decoration="underline">
-     							 Devaraj Gurikar
+							<fo:basic-link  external-destination="url('https://www.linkedin.com/in/devaraj-gurikar-1634a750/')" text-decoration="underline">
+     							 <xsl:value-of select="resume/name"/>
    							</fo:basic-link>          					
         				</fo:inline>
         				
-        				<fo:inline>
-          					gurikar.devaraj@gmail.com
+        				<fo:inline padding="2px">
+          					<xsl:value-of select="resume/email" />
         				</fo:inline>
         				
 					</fo:block>
@@ -58,39 +55,28 @@
 					
 					<fo:block margin-top="16.6pt" space-before.optimum="10pt" space-after.optimum="10pt">
 						<fo:table>
-							<fo:table-column column-width="100pt" border-right="solid 0.1pt" padding="1pt"/>
+							<fo:table-column column-width="150pt" border-right="solid 0.1pt" padding="1pt"/>
 							<fo:table-column column-width="auto" />
 							
 							<fo:table-body>
-								<fo:table-row>
-									<fo:table-cell >
-										<fo:block padding-top="50pt">
-										asdffffffffffffffffffffff
+								<xsl:for-each select="resume/contents">
+									<fo:table-row>
+										<fo:table-cell >
+											<fo:block>
+												<fo:block-container position="absolute" top="50pt" left="146pt">
+													<fo:block>
+														<fo:external-graphic src="url('src/resources/circle.png')" content-height="7pt" content-width="7pt"/>
+													</fo:block>
+												</fo:block-container>
+											</fo:block>
+										</fo:table-cell>
 											
-										</fo:block>
-									</fo:table-cell>
-										
-									<fo:table-cell>
-										<fo:block>
-										</fo:block>
-									</fo:table-cell>
-								</fo:table-row>
-								
-								<fo:table-row>
-									<fo:table-cell >
-										<fo:block padding-top="50pt">
-										asdffffffffffffffffffffff
-											
-										</fo:block>
-									</fo:table-cell>
-										
-									<fo:table-cell>
-										<fo:block>
-										</fo:block>
-									</fo:table-cell>
-								</fo:table-row>
+										<fo:table-cell>
+											<fo:block padding-top="50pt" margin-left="10pt"><xsl:value-of select="summary"/></fo:block>
+										</fo:table-cell>
+									</fo:table-row>
+								</xsl:for-each>
 							</fo:table-body>
-							
 						</fo:table>
 					</fo:block>
 					
